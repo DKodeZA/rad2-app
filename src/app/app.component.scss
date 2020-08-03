@@ -1,0 +1,20 @@
+.app-wrapper {
+    background-color: rgb(148, 128, 225);
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .container-md {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .loading-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 50;
+    }
+}

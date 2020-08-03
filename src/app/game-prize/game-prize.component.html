@@ -1,0 +1,17 @@
+<div class="prize-container row" *ngIf="gamePrizeOffer != null">
+    <div class="col-sm-8 offset-sm-2 content-container">
+        <div *ngIf="state === 'SUCCESS'" class="dynamic-content" [@inOutAnimation]>
+            <div class="header-text success">{{'You\’ve ' + gamePrizeOffer.amount + ' ' + gamePrizeOffer.prize + ' to use now'}}</div>        
+        </div>
+
+        <div *ngIf="state === 'CLAIM'" class="dynamic-content" [@inOutAnimation]>
+            <div class="header-text">{{gamePrizeOffer.amount + ' ' + gamePrizeOffer.prize + ' on ' + gamePrizeOffer.game}}</div>
+            <div class="timer" [ngClass]="{'expired': timeLeft <= 0}">{{getCountdownTimer()}}</div>
+        </div>
+        
+        <button class="btn btn-default" [ngClass]="{'success': state === 'SUCCESS'}" (click)="claimPrize()" [disabled]="timeLeft <= 0 || loading">
+            <span *ngIf="state === 'CLAIM'">{{timeLeft > 0 ? 'Claim now' : 'Offer Expired'}}</span>
+            <img *ngIf="state === 'SUCCESS'" src="assets/icon-tick.svg" alt="success-tick">
+        </button>
+    </div>
+</div>

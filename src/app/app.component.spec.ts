@@ -1,6 +1,8 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { SpinnerService } from 'src/lib/spinner/spinner.service';
+import { GamePrizeService } from './game-prize/game-prize.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,6 +13,10 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [
+        SpinnerService,
+        GamePrizeService
+      ]
     }).compileComponents();
   }));
 
@@ -24,12 +30,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('rad2-app');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('rad2-app app is running!');
   });
 });

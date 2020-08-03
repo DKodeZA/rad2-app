@@ -1,0 +1,18 @@
+GET http://localhost:3000/game-prize
+
+###
+
+POST http://localhost:3000/game-prize HTTP/1.1
+content-type: application/json
+
+{
+    "amount": 50,
+    "game": "Gemix",
+    "prize": "Free Spins"
+}
+
+###
+POST http://localhost:3000/game-prize HTTP/1.1
+content-type: application/json
+
+{}
