@@ -8,10 +8,10 @@ export class GamePrizeService {
   constructor(private http: HttpClient) { }
 
   getGamePrize(): Promise<GamePrizeOffer> {
-    return this.http.get<GamePrizeOffer>('/game-prize').toPromise();
+    return this.http.get<GamePrizeOffer>('/api/game-prize').toPromise();
   }
 
   submitGamePrize(gamePrize: GamePrize): Promise<GamePrize> {
-    return this.http.post<GamePrize>('/game-prize', gamePrize).toPromise();
+    return this.http.post<GamePrize>('/api/game-prize', gamePrize).toPromise();
   }
 }

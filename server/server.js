@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use('/game-prize', gamePrizeAPI);
+app.use('/api', gamePrizeAPI);
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("dist/rad2-app"));

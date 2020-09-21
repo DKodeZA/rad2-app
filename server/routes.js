@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/game-prize', (req, res) => {
     console.log('GET');
     res.send({
         game: 'Gemix',
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/game-prize', (req, res) => {
     console.log('POST');
     if (req.body != null && validPostObject(req.body)) {
         res.status(201).send();
